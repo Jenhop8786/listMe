@@ -2,10 +2,10 @@ class ContactsController < ApplicationController
 
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.page
   end
 
 
 
-  
+
 end#class
