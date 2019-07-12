@@ -1,16 +1,22 @@
-<div class="panel panel-default">
-  <table class="table">
-    <%= render @contacts %>
-  </table>
-</div>
 
-      <div class="text-center">
-        <nav>
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="Previous">
+<% if @contacts.blank? %>
+    <div class="alert alert-warning">
+       <strong>Record not found</strong>
+    </div>
+<% end %>
+    <div class="panel panel-default">
+      <table class="table">
+        <%= render @contacts %>
+      </table>
+    </div>
+
+    <div class="text-center">
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
-              </a>
+            </a>
             </li>
             <li class="active"><a href="#">1</a></li>
             <li><a href="#">2</a></li>
