@@ -34,13 +34,13 @@ class ContactsController < ApplicationController
        flash[:success] = "Contact was successfully updated"
      else
        render 'edit'
-     end 
+     end
   end
 
 private
 
 def contact_params
-   params.require(:contact).permit(:name, :email, :company, :phone, :group_id)
+   params.require(:contact).permit(:name, :email, :company, :phone, :group_id, :avatar)
 end
 
 
