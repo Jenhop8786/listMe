@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddAttachmentAvatarToContacts < ActiveRecord::Migration[5.2]
   def self.up
     change_table :contacts do |t|

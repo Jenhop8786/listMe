@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -11,9 +13,9 @@ Group.destroy_all
 
 group_ids = []
 
-group_ids << Group.create(name: "Client Referrals").id
-group_ids << Group.create(name: "Family Referrals").id
-group_ids << Group.create(name: "Main Leads").id
+group_ids << Group.create(name: 'Client Referrals').id
+group_ids << Group.create(name: 'Family Referrals').id
+group_ids << Group.create(name: 'Main Leads').id
 
 p " #{group_ids.count}created "
 
@@ -21,7 +23,7 @@ group_count = group_ids.length
 number_of_contacts = 10
 contacts = []
 
-number_of_contacts.times do |i|
+number_of_contacts.times do |_i|
   new_contact = {
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -30,8 +32,8 @@ number_of_contacts.times do |i|
     address: "#{Faker::Address.street_address} #{Faker::Address.zip} #{Faker::Address.city}",
     group_id: group_ids[Random.rand(0...group_count)]
   }
-   contacts.push(new_contact)
- end
+  contacts.push(new_contact)
+end
 
 Contact.create(contacts)
 
