@@ -18,11 +18,11 @@
         <td width="100" class="middle">
           <div>
             <%= link_to edit_contact_path(contact), class:"btn btn-circle btn-default btn-xs", title: "Edit" do %>
-               <i class="glyphicon glyphicon-edit"></i>
+            <i class="glyphicon glyphicon-edit"></i>
             <% end %>
-          <a href="#" class="btn btn-circle btn-danger btn-xs" title="Edit">
+            <%= link_to destroy_contact_path(contact), method: :delete, class:"btn btn-circle btn-danger btn-xs", title: "Delete", data: {confirm: "Are you sure?"} do %>
             <i class="glyphicon glyphicon-remove"></i>
-          </a>
-      </div>
-    </td>
-</tr>
+            <% end %>
+          </div>
+         </td>
+  </tr>
