@@ -33,6 +33,7 @@ gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'paperclip', '~> 6.1'
 gem 'rubocop', require: false
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require jasny-bootstrap.min
+ *= require jquery-ui
  */
 
  @import "bootstrap-sprockets";
@@ -81,4 +82,11 @@
 
 .alert-warning {
   margin-bottom: 0;
+}
+
+.ui-autocomplete {
+  position: relative;
+  cursor: default;
+  z-index: 9999 !important;
+  width: 196px;
 }
