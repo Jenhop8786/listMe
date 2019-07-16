@@ -8,7 +8,7 @@ class Contact < ApplicationRecord
   validates :name, :email, :group_id, presence: true
   validates :name, length: { minimum: 2 }
 
-  has_attached_file :avatar, styles: { medium: '150x150>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
+  has_attached_file :avatar, styles: { medium: '150x150>', thumb: '100x100>' }, default_url: '/images/:style/default.png'
   validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\z}
 
   def gravatar
@@ -17,7 +17,7 @@ class Contact < ApplicationRecord
   end
 
   scope :search, -> (term) do
-    where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term', term: "%#{term.downcase}%") if term.present? 
+    where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term', term: "%#{term.downcase}%") if term.present?
   end
 
   # def self.search(term)
