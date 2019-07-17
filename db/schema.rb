@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_050715) do
+ActiveRecord::Schema.define(version: 2019_07_17_155624) do
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 2019_07_17_050715) do
     t.string "avatar_content_type"
     t.bigint "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.bigint "user_id"
     t.index ["group_id"], name: "index_contacts_on_group_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,4 +48,5 @@ ActiveRecord::Schema.define(version: 2019_07_17_050715) do
   end
 
   add_foreign_key "contacts", "groups"
+  add_foreign_key "contacts", "users"
 end

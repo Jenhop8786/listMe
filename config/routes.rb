@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users, path: 'auth', controllers: { registrations: :custom_registrations } path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+  devise_for :users, path: 'auth', controllers: { registrations: :custom_registrations }, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
   resources :contacts do
     get 'autocomplete', on: :collection
