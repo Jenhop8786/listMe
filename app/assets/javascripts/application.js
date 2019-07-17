@@ -14,7 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
-//= require bootstrap-sprockets
+//= require bootstrap/dropdown
 //= require jasny-bootstrap.min
 //= require jquery_ujs
 //= require turbolinks
