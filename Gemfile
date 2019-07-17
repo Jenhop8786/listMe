@@ -37,6 +37,7 @@ gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'jquery', '~> 0.0.1'
 gem 'jquery-rails'
 gem 'rails-ujs'
+gem 'devise', '~> 4.6', '>= 4.6.2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
