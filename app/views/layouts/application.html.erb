@@ -5,18 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' %>
 
-  <!-- content -->
-  <div class="container">
-    <div class="row">
+    <!-- content -->
+    <div class="container">
+      <div class="row">
         <%= yield %>
-       </div>
       </div>
+    </div>
   </body>
 </html>

@@ -1,67 +1,67 @@
 <%= form_for(@contact, html: { multipart: true }) do |f| %>
 
-    <div class="panel-body">
+<div class="panel-body">
 
-        <% if @contact.errors.any? %>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-danger">
-                        <h3>Please correct this following errors:</h3>
+  <% if @contact.errors.any? %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-danger">
+          <h3>Please correct this following errors:</h3>
 
-                        <ul>
-                            <% @contact.errors.full_messages.each do |message| %>
-                                <li><%= message %></li>
-                            <% end %>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        <% end %>
+          <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-      <div class="form-horizontal">
-        <div class="row">
+  <div class="form-horizontal">
+    <div class="row">
+      <div class="col-md-8">
+
+        <div class="form-group">
+          <%= f.label :name, class: "control-label col-md-3" %>
           <div class="col-md-8">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+        </div>
 
-            <div class="form-group">
-              <%= f.label :name, class: "control-label col-md-3" %>
-              <div class="col-md-8">
-                <%= f.text_field :name, class: "form-control" %>
-              </div>
-            </div>
+        <div class="form-group">
+          <%= f.label :company, class: "control-label col-md-3" %>
+          <div class="col-md-8">
+            <%= f.text_field :company, class: "form-control" %>
+          </div>
+        </div>
 
-            <div class="form-group">
-              <%= f.label :company, class: "control-label col-md-3" %>
-              <div class="col-md-8">
-                <%= f.text_field :company, class: "form-control" %>
-              </div>
-            </div>
+        <div class="form-group">
+          <%= f.label :email, class: "control-label col-md-3" %>
+          <div class="col-md-8">
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+        </div>
 
-            <div class="form-group">
-              <%= f.label :email, class: "control-label col-md-3" %>
-              <div class="col-md-8">
-                <%= f.text_field :email, class: "form-control" %>
-              </div>
-            </div>
+        <div class="form-group">
+          <%= f.label :phone, class: "control-label col-md-3" %>
+          <div class="col-md-8">
+            <%= f.text_field :phone, class: "form-control" %>
+          </div>
+        </div>
 
-            <div class="form-group">
-              <%= f.label :phone, class: "control-label col-md-3" %>
-              <div class="col-md-8">
-                <%= f.text_field :phone, class: "form-control" %>
-              </div>
-            </div>
+        <div class="form-group">
+          <%= f.label :address, class: "control-label col-md-3" %>
+          <div class="col-md-8">
+            <%= f.text_area :address, class: "form-control", rows: 3 %>
+          </div>
+        </div>
 
-            <div class="form-group">
-              <%= f.label :address, class: "control-label col-md-3" %>
-              <div class="col-md-8">
-                <%= f.text_area :address, class: "form-control", rows: 3 %>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <%= f.label :group_id, class: "control-label col-md-3" %>
-              <div class="col-md-5">
-                <% attr = { prompt: "Select Group" } %>
-                <% attr[:selected] = session[:selected_group_id].to_i if session[:selected_group_id] %>
+        <div class="form-group">
+          <%= f.label :group_id, class: "control-label col-md-3" %>
+          <div class="col-md-5">
+            <% attr = { prompt: "Select Group" } %>
+              <% attr[:selected] = session[:selected_group_id].to_i if session[:selected_group_id] %>
                 <%= f.collection_select :group_id, Group.all, :id, :name, attr, class: "form-control" %>
               </div>
               <div class="col-md-3">
@@ -108,4 +108,4 @@
         </div>
       </div>
     </div>
-<% end %>
+  <% end %>

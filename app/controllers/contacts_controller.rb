@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ContactsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_contact, only: [:edit, :update, :destroy]
+  before_action :find_contact, only: %i[edit update destroy]
 
   def index
     session[:selected_group_id] = params[:group_id]
@@ -26,8 +28,7 @@ class ContactsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @contact.update(contact_params)
@@ -44,7 +45,6 @@ class ContactsController < ApplicationController
     redirect_to contacts_path
   end
 
-
   private
 
   def contact_params
@@ -58,6 +58,4 @@ class ContactsController < ApplicationController
   def previous_query_string
     session[:selected_group_id] ? { group_id: session[:selected_group_id] } : {}
   end
-
-
 end # class
