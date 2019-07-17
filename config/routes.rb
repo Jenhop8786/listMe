@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
-  get 'dashboard/index'
-  get 'home/index'
-  devise_for :users
   resources :contacts do
     get 'autocomplete', on: :collection
   end
@@ -12,6 +10,10 @@ Rails.application.routes.draw do
   post '/groups', to: 'groups#create'
 
   get '/dashboard', to: 'dashboard#index'
+
+  get 'dashboard/index'
+  
+  get 'home/index'
 
   root 'home#index'
 end
