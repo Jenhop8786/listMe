@@ -1,2 +1,12 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<div class="col-md-10 col-md-offset-1">
+    <div class="jumbotron text-center">
+        <h2><%= current_user.name %></h2>
+        <p class="lead">See your progress:</p>
+        <h4> 30 leads added this month! </h4>
+        <h5> John added 10 leads this month!</h5>
+        <h5> Casey added 3 leads this month! </h5>
+        <p>
+          <%= link_to "Manage Leads", contacts_path, class: "btn btn-default" %>
+        </p>
+    </div>
+</div>
