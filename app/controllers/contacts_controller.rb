@@ -28,6 +28,11 @@ class ContactsController < ApplicationController
     end
   end
 
+  def show
+    @contacts = Contact.find_contact 
+  end
+
+
   def edit
     authorize @contact
   end
