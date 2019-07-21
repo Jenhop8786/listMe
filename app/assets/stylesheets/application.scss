@@ -16,10 +16,12 @@
  *= require jquery-ui
  *= require jquery-ui/autocomplete
  *= require jquery-ui/menu
+ *= require toastr
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "toastr";
 
  body {
 	padding-top: 70px;

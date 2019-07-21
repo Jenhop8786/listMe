@@ -39,6 +39,7 @@ gem 'jquery-rails'
 gem 'rails-ujs'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'pundit', '~> 2.0', '>= 2.0.1'
+gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

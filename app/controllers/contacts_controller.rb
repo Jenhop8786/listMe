@@ -24,12 +24,13 @@ class ContactsController < ApplicationController
       flash[:success] = 'Contact Saved'
       redirect_to contacts_path(previous_query_string)
     else
+      flash[:error] = 'Contact could not be created'
       render 'new'
     end
   end
 
   def show
-    @contacts = Contact.find_contact 
+    @contacts = Contact.find_contact
   end
 
 
@@ -43,6 +44,7 @@ class ContactsController < ApplicationController
       flash[:success] = 'Contact was successfully updated'
       redirect_to contacts_path(previous_query_string)
     else
+      flash[:error] = 'Contact could not be updated'
       render 'edit'
     end
   end
