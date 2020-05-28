@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', '~> 1.2'
 gem 'paperclip', '~> 6.1'
 gem 'rubocop', require: false
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
